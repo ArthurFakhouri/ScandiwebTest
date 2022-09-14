@@ -64,7 +64,7 @@ class DataProvider extends Component {
         let selectedAttributes = this.getSelectedAttributes(product, attributes);
         let indexProduct = -1;
 
-        if (localStorage.getItem("bag")) {
+        if (JSON.parse(localStorage.getItem("bag"))) {
             bag = [...JSON.parse(localStorage.getItem("bag"))];
             indexProduct = bag.findIndex((item) => {
                 return item.product.id === product.id &&

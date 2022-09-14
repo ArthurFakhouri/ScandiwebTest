@@ -15,7 +15,9 @@ class BagItems extends Component {
     }
 
     componentDidMount() {
-        const bag = JSON.parse(localStorage.getItem("bag"));
+        let bag = [];
+        if(JSON.parse(localStorage.getItem("bag")))
+            bag = JSON.parse(localStorage.getItem("bag"));
         let indexList = Array(bag.length).fill(0);
         this.setState({ galleryIndex: indexList });
     }
