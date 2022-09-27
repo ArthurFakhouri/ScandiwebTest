@@ -37,4 +37,4 @@ The project was developed using the following technologies:
 Access link to project layout: [Figma - ScandiwebTest](https://www.figma.com/file/MSyCAqVy1UgNap0pvqH6H3/Junior-Frontend-Test-Designs-(Public)?node-id=0%3A1)
 
 ## :memo: License
-This project is under the MIT license. See [LICENÇA](LICENSE) for details.
+This project is under the MIT license. See [License](LICENSE) for details.
