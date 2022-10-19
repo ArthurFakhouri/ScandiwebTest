@@ -94,6 +94,7 @@ export const Price = styled.span`
 
 export const AddToCart = styled.button`
     display: flex;
+    ${props=>props.inStock?"":"pointer-events: none;opacity: 0.7;"}
     height: 50px;
     border: none;
     color: white;

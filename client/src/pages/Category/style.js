@@ -38,7 +38,7 @@ export const CategoryItem = styled.li`
     display: flex;
     padding: 15px;
     flex-direction: column;
-    ${(props) => !props.inStock ? "color: #8D8F9A;pointer-events: none;" : ""}
+    ${(props) => !props.inStock ? "color: #8D8F9A;" : ""}
 
     & > div {
         width: 350px;
