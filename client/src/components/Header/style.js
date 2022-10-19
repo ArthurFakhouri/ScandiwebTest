@@ -5,7 +5,7 @@ export const Caption = styled.header`
     position: fixed;
     background-color: white;
     align-items: center;
-    width: 100%;
+    width: 100vw;
     height: 80px;
     padding: 0 7%;
     user-select: none;
