@@ -25,7 +25,7 @@ class CartOverlay extends PureComponent {
             textBagLength = `${itemsLength} items`
 
         return (
-            <Container active={isLookingCart}>
+            <Container active={isLookingCart} onClick={(e)=>e.stopPropagation()}>
                 <Title>My Bag, <span>{textBagLength}</span></Title>
                 <Bag>
                     <BagItems theme="cart-overlay" disabled={true} />
