@@ -32,6 +32,7 @@ class BagItems extends PureComponent {
             index = 0;
         gallery[pos] = index;
         this.setState({ galleryIndex: gallery });
+        this.forceUpdate();
     }
 
     render() {
