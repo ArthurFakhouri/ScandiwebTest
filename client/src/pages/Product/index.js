@@ -41,7 +41,7 @@ class Product extends PureComponent {
     render() {
         const { selectedCurrency, selectedAttributes } = this.context;
         const { product, selected } = this.state;
-        const { gallery, name, brand, attributes, prices, description } = product;
+        const { gallery, name, brand, attributes, prices, description, inStock } = product;
         let currency, amount;
         if (prices) {
             currency = prices[selectedCurrency].currency;
@@ -70,8 +70,9 @@ class Product extends PureComponent {
                                 selectedAttributes={selectedAttributes} />
                             <PriceText>Price</PriceText>
                             <Price>{currency.symbol}{amount}</Price>
-                            <AddToCart onClick={(event) =>
-                                this.handleAddToCartClick(event, product, 1, selectedAttributes)}>
+                            <AddToCart inStock={inStock} 
+                            onClick={(event) =>
+                             this.handleAddToCartClick(event, product, 1, selectedAttributes)}>
                                 Add to cart
                             </AddToCart>
                             <Description dangerouslySetInnerHTML={{ __html: description }}></Description>
