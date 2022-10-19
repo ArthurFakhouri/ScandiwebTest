@@ -14,11 +14,15 @@ class DataProvider extends Component {
         selectedAttributes: [],
         isSelectingCurrency: false,
         isLookingCart: false,
+        bodyHeight: 0,
         currencies: [],
         categories: [],
         products: [],
         bag: []
     };
+    setBodyHeight = (height) => {
+        this.setState({bodyHeight: height});
+    }
     setHeaderData = ({ categories, currencies }) => {
         this.setState({ categories, currencies })
     }
@@ -90,7 +94,7 @@ class DataProvider extends Component {
                 ...this.state, setHeaderData: this.setHeaderData, setBag: this.setBag,
                 toggleCurrency: this.toggleCurrency, toggleActive: this.toggleActive,
                 toggleCategory: this.toggleCategory, handleAddToCart: this.handleAddToCart,
-                setSelectedAttributes: this.setSelectedAttributes
+                setSelectedAttributes: this.setSelectedAttributes, setBodyHeight: this.setBodyHeight
             }}>
                 {this.props.children}
             </DataContext.Provider>
