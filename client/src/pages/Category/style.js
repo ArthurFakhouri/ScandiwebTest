@@ -15,8 +15,9 @@ export const Name = styled.h2`
 `
 
 export const Categories = styled.ul`
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    list-style: none;
 
     & > li {
         margin-top: 60px;
@@ -35,9 +36,8 @@ export const Categories = styled.ul`
 `
 
 export const CategoryItem = styled.li`
-    display: flex;
     padding: 15px;
-    flex-direction: column;
+    width: 386px;
     ${(props) => !props.inStock ? "color: #8D8F9A;" : ""}
 
     & > div {
