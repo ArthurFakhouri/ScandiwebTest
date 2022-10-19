@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import { withRouter } from 'react-router-dom';
 import { DataContext } from '../../contexts/data';
 import { Nav } from './style';
 
@@ -7,13 +8,17 @@ class Navigation extends PureComponent {
     static contextType = DataContext;
 
     render() {
-        const { toggleCategory, selectedCategory, categories } = this.context;
+        const { selectedCategory, categories } = this.context;
+        const { history } = this.props;
 
         return (
             <Nav selectedIndex={selectedCategory}>
                 <ul>
-                    {categories.map((category, index) =>
-                        <li key={index} onClick={() => toggleCategory(index, category.name)}>{category.name.toUpperCase()}</li>
+                    {categories.map(({ name: category }, index) =>
+                        <li key={index} onClick={() => 
+                            history.push(`/${category !== "all"?category:""}`)
+                        }
+                        >{category.toUpperCase()}</li>
                     )}
                 </ul>
             </Nav>
@@ -21,4 +26,4 @@ class Navigation extends PureComponent {
     }
 }
 
-export default Navigation;
+export default withRouter(Navigation);
