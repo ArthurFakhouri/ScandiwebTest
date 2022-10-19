@@ -6,6 +6,7 @@ import { client, getProduct } from '../../services/api';
 import { Brand, Container, Data, Gallery, Image, MainImage, Name, PriceText, Price, AddToCart, Description } from './style';
 import { DataContext } from '../../contexts/data';
 import { toast } from 'react-toastify';
+import { stringToComponent } from '../../utils/converters';
 
 class Product extends PureComponent {
     static contextType = DataContext;
@@ -21,10 +22,8 @@ class Product extends PureComponent {
 
     handleAddToCartClick(event, product, amount, attributes) {
         const { handleAddToCart } = this.context;
-        const { history } = this.props;
         handleAddToCart(event, product, amount, attributes);
         toast.success("The product has been added into the bag!");
-        history.goBack();
     }
 
     async componentDidMount() {
@@ -75,7 +74,7 @@ class Product extends PureComponent {
                              this.handleAddToCartClick(event, product, 1, selectedAttributes)}>
                                 Add to cart
                             </AddToCart>
-                            <Description dangerouslySetInnerHTML={{ __html: description }}></Description>
+                            <Description>{stringToComponent(description)}</Description>
                         </Data>
                     </>
                 }

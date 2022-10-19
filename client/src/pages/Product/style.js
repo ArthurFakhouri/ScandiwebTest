@@ -115,7 +115,7 @@ export const AddToCart = styled.button`
     }
 `
 
-export const Description = styled.p`
+export const Description = styled.div`
     margin-top: 40px;
     height: 100px;
     padding-right: 15px;
