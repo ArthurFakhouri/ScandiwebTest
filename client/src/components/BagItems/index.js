@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { BagItem, Brand, Data, Gallery, Image, Name, Price, Quantity, Section, SelectImage } from './style';
 import Attributes from '../Attributes';
 import { DataContext } from '../../contexts/data';
 
-class BagItems extends Component {
+class BagItems extends PureComponent {
     static contextType = DataContext;
 
     constructor(props) {

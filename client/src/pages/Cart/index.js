@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Bag, Container } from './style';
 import { DataContext } from '../../contexts/data';
 import BagItems from '../../components/BagItems';
 import Payment from '../../components/Payment';
 
-class Cart extends Component {
+class Cart extends PureComponent {
     static contextType = DataContext;
 
     render() {

@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { DataContext } from '../../contexts/data';
 import { Nav } from './style';
 
-class Navigation extends Component {
+class Navigation extends PureComponent {
 
     static contextType = DataContext;
 

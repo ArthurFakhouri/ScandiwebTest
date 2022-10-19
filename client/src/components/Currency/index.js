@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { OptionSelected, Options } from './style';
 import KeyBoardArrowDown from '../../assets/keyboardArrowDown.svg';
 import { DataContext } from '../../contexts/data';
 
 
-class Currency extends Component {
+class Currency extends PureComponent {
     static contextType = DataContext;
 
     render() {

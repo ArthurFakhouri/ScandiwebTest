@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { DataContext } from '../../contexts/data';
 import AttributeItem from '../AttributeItem';
 import { Attribute, AttributesC, Options } from './style';
 
-class Attributes extends Component {
+class Attributes extends PureComponent {
     static contextType = DataContext;
 
     render() {

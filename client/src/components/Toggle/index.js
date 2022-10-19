@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { DataContext } from '../../contexts/data';
 import { Base, Stick1, Stick2, Toggler } from './style'
 
-export default class Toggle extends Component {
+export default class Toggle extends PureComponent {
     static contextType = DataContext;
 
     render() {

@@ -1,9 +1,9 @@
 import React from 'react';
-import { Component } from 'react';
+import { PureComponent } from 'react';
 import BrandIcon from '../../assets/brandIcon.svg';
 import { LogoContainer } from './style';
 
-class Logo extends Component {
+class Logo extends PureComponent {
     render() {
         return (
             <LogoContainer>

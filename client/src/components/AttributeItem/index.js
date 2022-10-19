@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import Toggle from '../Toggle';
 import { Default, Color } from './style';
 import { DataContext } from '../../contexts/data';
 
-class AttributeItem extends Component {
+class AttributeItem extends PureComponent {
     static contextType = DataContext;
 
     render() {

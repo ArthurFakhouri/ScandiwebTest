@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Categories, CategoryItem, Container, Name } from './style';
 import Cart from '../../assets/whiteCart.svg';
 import { DataContext } from '../../contexts/data';
 import { withRouter } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
-class Category extends Component {
+class Category extends PureComponent {
     static contextType = DataContext;
 
     handleAddToCartClick(event, product, amount, attributes) {

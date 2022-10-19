@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import CartImg from '../../assets/cart.svg';
 import { DataContext } from '../../contexts/data';
 import { getAmountItemsBag } from '../../utils/cartFunctions';
 import CartOverlay from '../CartOverlay';
 import { Cart } from './style';
 
-class CartHeader extends Component {
+class CartHeader extends PureComponent {
 
     static contextType = DataContext;
 

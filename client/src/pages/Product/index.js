@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { withRouter } from "react-router";
 import Attributes from '../../components/Attributes';
 import { client, getProduct } from '../../services/api';
@@ -7,7 +7,7 @@ import { Brand, Container, Data, Gallery, Image, MainImage, Name, PriceText, Pri
 import { DataContext } from '../../contexts/data';
 import { toast } from 'react-toastify';
 
-class Product extends Component {
+class Product extends PureComponent {
     static contextType = DataContext;
 
     constructor(props) {

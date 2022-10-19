@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import CartHeader from '../CartHeader';
 import Currency from '../Currency';
 import { Actions } from './style';
 
-class Action extends Component {
+class Action extends PureComponent {
     render() {
         return (
             <Actions>

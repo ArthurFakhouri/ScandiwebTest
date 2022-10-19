@@ -1,7 +1,7 @@
 import Header from './components/Header'
 import { GlobalStyle } from './global';
 import { client, getCategories, getCurrencies } from './services/api';
-import { Component } from 'react';
+import { PureComponent } from 'react';
 import axios from 'axios';
 import { DataContext } from './contexts/data';
 import Routes from './routes';
@@ -9,7 +9,7 @@ import { Main } from './style';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 
-class App extends Component {
+class App extends PureComponent {
   static contextType = DataContext;
 
   headerDataValidation = (method, ...params) => {

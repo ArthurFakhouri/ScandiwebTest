@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { withRouter } from 'react-router-dom';
 import { DataContext } from '../../contexts/data';
 import { getAmountItemsBag, getTotal } from '../../utils/cartFunctions';
 import { Order, PaymentC, SubText, Total, Value } from './style';
 
-class Payment extends Component {
+class Payment extends PureComponent {
     static contextType = DataContext;
 
     constructor(props) {

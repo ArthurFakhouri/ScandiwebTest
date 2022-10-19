@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Cart from './pages/Cart';
 import Category from './pages/Category';
 import Product from './pages/Product';
 
-class Routes extends Component {
+class Routes extends PureComponent {
     render() {
         return (
             <BrowserRouter>
