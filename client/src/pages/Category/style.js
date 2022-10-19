@@ -60,8 +60,9 @@ export const CategoryItem = styled.li`
 
     & > div > img {
         ${(props) => !props.inStock ? "opacity: .5;" : ""}
-        max-width: 100%;
+        width: 100%;
         height: 100%;
+        object-fit: contain;
     }
 
     section {
