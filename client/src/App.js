@@ -33,7 +33,7 @@ class App extends PureComponent {
     setBag(JSON.parse(localStorage.getItem("bag")));
     this.headerDataValidation(toggleCurrency, localStorage.getItem("currencyIndex"))
 
-    const listener = (event) => {
+    const clickListener = (event) => {
       const { isSelectingCurrency, isLookingCart } = this.context;
 
       if (isSelectingCurrency || isLookingCart) {
@@ -41,7 +41,7 @@ class App extends PureComponent {
       }
     }
 
-    window.addEventListener('click', (event) => listener(event));
+    window.addEventListener('click', (event) => clickListener(event));
   }
 
   render() {
