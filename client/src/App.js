@@ -1,11 +1,9 @@
-import Header from './components/Header'
 import { GlobalStyle } from './global';
 import { client, getCategories, getCurrencies } from './services/api';
 import { PureComponent } from 'react';
 import axios from 'axios';
 import { DataContext } from './contexts/data';
 import Routes from './routes';
-import { Main } from './style';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 
@@ -56,15 +54,10 @@ class App extends PureComponent {
 
   render() {
 
-    const { isLookingCart } = this.context;
-
     return (
       <div >
         <GlobalStyle />
-        <Header />
-        <Main isLookingCart={isLookingCart}>
-          <Routes />
-        </Main>
+        <Routes />
         <ToastContainer position='bottom-right' autoClose={2000}
           hideProgressBar={false} closeOnClick={true}
           pauseOnHover={true} draggable={true} />
