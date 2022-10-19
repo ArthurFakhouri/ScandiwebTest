@@ -21,7 +21,8 @@ class App extends PureComponent {
   }
 
   componentDidMount() {
-    const { toggleActive, setBag, setHeaderData, toggleCurrency, toggleCategory } = this.context;
+    const { toggleActive, setBag, setHeaderData, toggleCurrency, toggleCategory, setBodyHeight } = this.context;
+    
     const fetchData = async () => {
       const queryResult = await axios.post(client, { query: `{${getCategories},${getCurrencies}}` })
       const result = queryResult.data.data;
@@ -41,7 +42,16 @@ class App extends PureComponent {
       }
     }
 
+    setBodyHeight(window.innerHeight);
+
+    const resizeListener = (bodyHeight) => {
+      const { setBodyHeight } = this.context;
+
+      setBodyHeight(bodyHeight);
+    }
+
     window.addEventListener('click', (event) => clickListener(event));
+    window.addEventListener('resize', () => resizeListener(window.innerHeight))
   }
 
   render() {
