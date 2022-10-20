@@ -69,8 +69,8 @@ class Product extends PureComponent {
                                 selectedAttributes={selectedAttributes} />
                             <PriceText>Price</PriceText>
                             <Price>{currency.symbol}{amount}</Price>
-                            <AddToCart inStock={inStock} 
-                            onClick={(event) =>
+                            <AddToCart inStock={inStock}
+                            onClick={(event) => inStock &&
                              this.handleAddToCartClick(event, product, 1, selectedAttributes)}>
                                 Add to cart
                             </AddToCart>
