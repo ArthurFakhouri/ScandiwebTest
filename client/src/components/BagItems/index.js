@@ -16,10 +16,23 @@ class BagItems extends PureComponent {
 
     componentDidMount() {
         let bag = [];
-        if(JSON.parse(localStorage.getItem("bag")))
+        if (JSON.parse(localStorage.getItem("bag")))
             bag = JSON.parse(localStorage.getItem("bag"));
         let indexList = Array(bag.length).fill(0);
         this.setState({ galleryIndex: indexList });
+    }
+
+    handleBagAddToCart(event, bag, index, product, amount, selectedAttributes) {
+        const { handleAddToCart } = this.context;
+        handleAddToCart(event, product, amount, selectedAttributes);
+
+        if (bag[index].amount + amount < 1) {
+            let gallery = this.state.galleryIndex;
+            gallery.splice(index, 1);
+
+            this.setState({ galleryIndex: gallery });
+            this.forceUpdate();
+        }
     }
 
     handleChangeImage(value, pos, length) {
@@ -36,7 +49,7 @@ class BagItems extends PureComponent {
     }
 
     render() {
-        const { bag, selectedCurrency, handleAddToCart } = this.context;
+        const { bag, selectedCurrency } = this.context;
 
         return (
             <>
@@ -44,7 +57,7 @@ class BagItems extends PureComponent {
                     const { amount, product, selectedAttributes } = item;
                     const { prices, attributes, gallery, name, brand } = product;
                     const { theme, disabled = false } = this.props;
-                    const imageIndex = this.state.galleryIndex[index]?this.state.galleryIndex[index]:0;
+                    const imageIndex = this.state.galleryIndex[index] ? this.state.galleryIndex[index] : 0;
                     return (
                         <BagItem key={index}>
                             <Data>
@@ -55,9 +68,9 @@ class BagItems extends PureComponent {
                             </Data>
                             <Section>
                                 <Quantity theme={theme}>
-                                    <button onClick={(event) => handleAddToCart(event, product, 1, selectedAttributes)}>+</button>
+                                    <button onClick={(event) => this.handleBagAddToCart(event, bag, index, product, 1, selectedAttributes)}>+</button>
                                     <span>{amount}</span>
-                                    <button onClick={(event) => handleAddToCart(event, product, -1, selectedAttributes)}>-</button>
+                                    <button onClick={(event) => this.handleBagAddToCart(event, bag, index, product, -1, selectedAttributes)}>-</button>
                                 </Quantity>
                                 <Gallery theme={theme}>
                                     {theme === "cart-overlay" ?
