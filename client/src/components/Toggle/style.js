@@ -7,12 +7,12 @@ export const Base = styled.div`
     border-radius: 25px;
     display: flex;
     justify-content: center;
+    transition: .5s transform, .5s box-shadow;
     ${props=>props.disabled?
     "pointer-events: none;":
     "background: #1D1F22;"}
     align-items: center;
     cursor: pointer;
-    transition: .5s transform, .5s box-shadow;
 
     &:hover{
         transform: translate(1px, -1px);
@@ -32,8 +32,8 @@ export const Toggler = styled.div`
     transition: all .3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 `
 
-function animate(name) {
-    return css`animation: ${name} .4s both cubic-bezier(.5, 0.885, 0.32, 1.275)`;
+function animate(name, time) {
+    return css`animation: ${name} ${time}s both cubic-bezier(.5, 0.885, 0.32, 1.275)`;
 }
 
 export const Stick = styled.div`
@@ -46,11 +46,11 @@ export const Stick = styled.div`
 `
 
 export const Stick1 = styled(Stick)`
-    ${props => props.toggle ? animate(stick1Toggle) : animate(stick1Untoggle)}
+    ${props => props.toggle ? animate(stick1Toggle, props.time) : animate(stick1Untoggle, props.time)}
 `
 
 export const Stick2 = styled(Stick)`
-    ${props => props.toggle ? animate(stick2Toggle) : animate(stick2Untoggle)}
+    ${props => props.toggle ? animate(stick2Toggle, props.time) : animate(stick2Untoggle, props.time)}
 `
 
 const stick1Toggle = keyframes`
