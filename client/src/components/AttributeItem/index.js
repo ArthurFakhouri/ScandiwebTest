@@ -18,12 +18,12 @@ class AttributeItem extends PureComponent {
                 {
                     nameLWC === "size" || nameLWC === "capacity" ?
                     <Default name={nameLWC} selected={selected} theme={theme} disabled={disabled}
-                        onClick={() => setSelectedAttributes(selectedAttributes, pos, value)}>
+                        onClick={() => !disabled && setSelectedAttributes(selectedAttributes, pos, value)}>
                         {itemValue}
                     </Default> :
                     nameLWC === "color" ?
                         <Color selected={selected} theme={theme} color={itemValue} disabled={disabled}
-                        onClick={() => setSelectedAttributes(selectedAttributes, pos, value)} /> :
+                        onClick={() => !disabled && setSelectedAttributes(selectedAttributes, pos, value)} /> :
                         <>
                             {selected ?
                                 <Toggle disabled={disabled} toggle={itemValue === "Yes" ? true : false} theme={theme}

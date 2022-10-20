@@ -13,10 +13,10 @@ export default class Toggle extends PureComponent {
 
         return (
             <Base theme={theme} disabled={disabled}
-                onClick={() => setSelectedAttributes(selectedAttributes, pos, value?0:1)}>
+                onClick={() => !disabled && setSelectedAttributes(selectedAttributes, pos, value?0:1)}>
                 <Toggler toggle={toggle}>
-                    <Stick1 toggle={toggle} />
-                    <Stick2 toggle={toggle} />
+                    <Stick1 toggle={toggle} time={disabled?0:.4} />
+                    <Stick2 toggle={toggle} time={disabled?0:.4} />
                 </Toggler>
             </Base>
         )
