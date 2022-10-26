@@ -10,23 +10,15 @@ import { Main } from './style';
 class Routes extends PureComponent {
     static contextType = DataContext;
 
-    constructor(props) {
-        super(props);
-        this.mainRef = React.createRef();
-    }
-
     render() {
 
-        const { categories, isLookingCart, bodyHeight } = this.context;
-        let mainHeight = 0;
-        if (this.mainRef.current && this.mainRef.current.children[0]) 
-            mainHeight = this.mainRef.current.children[0].offsetHeight;
+        const { categories, isLookingCart, mainRef, prefHeight } = this.context;
 
         return (
             <BrowserRouter>
                 <Header />
-                <Main ref={this.mainRef} isLookingCart={isLookingCart}
-                    height={mainHeight > bodyHeight ? mainHeight + 80 : bodyHeight}>
+                <Main ref={mainRef} isLookingCart={isLookingCart}
+                    height={prefHeight?prefHeight+"px":"auto"}>
                     <Switch>
                         <Route path='/product/:productId'><Product /></Route>
                         <Route path='/cart'><Cart /></Route>

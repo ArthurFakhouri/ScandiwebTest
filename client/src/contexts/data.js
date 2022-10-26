@@ -14,15 +14,13 @@ class DataProvider extends Component {
         selectedAttributes: [],
         isSelectingCurrency: false,
         isLookingCart: false,
-        bodyHeight: 0,
+        mainRef: React.createRef(),
+        prefHeight: 0,
         currencies: [],
         categories: [],
         products: [],
         bag: []
     };
-    setBodyHeight = (height) => {
-        this.setState({bodyHeight: height});
-    }
     setHeaderData = ({ categories, currencies }) => {
         this.setState({ categories, currencies })
     }
@@ -37,13 +35,19 @@ class DataProvider extends Component {
         if (selectedAttributes.length)
             selectedAttributes[pos] = value;
         this.setState({ selectedAttributes });
+        this.forceUpdate();
     }
     toggleCurrency = (index) => {
         localStorage.setItem("currencyIndex", index);
         this.setState({ selectedCurrency: index });
     }
     toggleActive = (event, isSelectingCurrency, isLookingCart) => {
-        this.setState({ isSelectingCurrency, isLookingCart });
+        const mainHeight = this.state.mainRef.current.children[0].offsetHeight + 80;
+        let prefHeight = 0;
+        if (isLookingCart) {
+            prefHeight = mainHeight > window.innerHeight ? mainHeight : window.innerHeight;
+        }
+        this.setState({ isSelectingCurrency, isLookingCart, prefHeight });
         event.stopPropagation();
     }
     toggleCategory = async (index, categoryName) => {
@@ -94,7 +98,7 @@ class DataProvider extends Component {
                 ...this.state, setHeaderData: this.setHeaderData, setBag: this.setBag,
                 toggleCurrency: this.toggleCurrency, toggleActive: this.toggleActive,
                 toggleCategory: this.toggleCategory, handleAddToCart: this.handleAddToCart,
-                setSelectedAttributes: this.setSelectedAttributes, setBodyHeight: this.setBodyHeight
+                setSelectedAttributes: this.setSelectedAttributes
             }}>
                 {this.props.children}
             </DataContext.Provider>

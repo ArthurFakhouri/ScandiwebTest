@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Main = styled.div`
     width: 100%;
-    height: ${props=>props.height}px;
+    height: ${props => props.height};
     user-select: none;
     padding-top: 80px;
     ${props=>props.isLookingCart?
