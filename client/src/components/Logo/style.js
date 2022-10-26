@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const LogoContainer = styled.div`
     position: absolute;
-    width: 100vw;
-    margin-left: -7%;
+    margin: 0 -101px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
