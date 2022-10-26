@@ -1,9 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.main`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
     color: #1D1F22;
 `
 
@@ -16,12 +13,12 @@ export const Name = styled.h2`
 
 export const Categories = styled.ul`
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 386px);
+    grid-gap: 103px 40px;
+    margin-top: 103px;
     list-style: none;
 
     & > li {
-        margin-top: 60px;
-        margin-right: 40px;
         transition: .5s box-shadow, .5s transform;
     }
 
