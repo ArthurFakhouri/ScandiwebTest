@@ -49,7 +49,7 @@ class Product extends PureComponent {
 
         return (
             <Container>
-                {Object.keys(product).length &&
+                {Object.keys(product).length?
                     <>
                         <Gallery>
                             {gallery.map((image, index) =>
@@ -69,14 +69,14 @@ class Product extends PureComponent {
                                 selectedAttributes={selectedAttributes} />
                             <PriceText>Price</PriceText>
                             <Price>{currency.symbol}{amount}</Price>
-                            <AddToCart inStock={inStock}
+                            <AddToCart disabled={!inStock}
                             onClick={(event) => inStock &&
                              this.handleAddToCartClick(event, product, 1, selectedAttributes)}>
                                 Add to cart
                             </AddToCart>
                             <Description>{stringToComponent(description)}</Description>
                         </Data>
-                    </>
+                    </>:""
                 }
             </Container>
         );

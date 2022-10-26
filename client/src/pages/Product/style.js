@@ -94,7 +94,6 @@ export const Price = styled.span`
 
 export const AddToCart = styled.button`
     display: flex;
-    ${props=>props.inStock?"":"pointer-events: none;opacity: 0.7;"}
     height: 50px;
     border: none;
     color: white;
@@ -112,6 +111,10 @@ export const AddToCart = styled.button`
     &:hover{
         cursor: pointer;
         filter: brightness(85%);
+    }
+    &:disabled{
+        pointer-events: none;
+        opacity: .7;
     }
 `
 
