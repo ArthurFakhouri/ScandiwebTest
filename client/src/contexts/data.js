@@ -1,12 +1,12 @@
 import axios from 'axios';
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { createContext } from 'react';
 import { client, getCategory } from '../services/api';
 import { arrayEquals } from '../utils/cartFunctions';
 
 export const DataContext = createContext({});
 
-class DataProvider extends Component {
+class DataProvider extends PureComponent {
 
     state = {
         selectedCategory: 0,
