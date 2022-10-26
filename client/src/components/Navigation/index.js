@@ -8,20 +8,22 @@ class Navigation extends PureComponent {
     static contextType = DataContext;
 
     render() {
-        const { selectedCategory, categories } = this.context;
+        const { toggleCategory, selectedCategory, categories } = this.context;
         const { history } = this.props;
 
         return (
             <Nav selectedIndex={selectedCategory}>
                 <ul>
                     {categories.map(({ name: category }, index) =>
-                        <li key={index} onClick={() => 
-                            history.push(`/${category !== "all"?category:""}`)
+                        <li key={index} onClick={async () => {
+                            await toggleCategory(index, category);
+                            history.push(`/${category !== "all" ? category : ""}`);
                         }
+                    }
                         >{category.toUpperCase()}</li>
                     )}
-                </ul>
-            </Nav>
+            </ul>
+            </Nav >
         );
     }
 }

@@ -14,19 +14,6 @@ class Category extends PureComponent {
         toast.success("The product has been added into the bag!");
     }
 
-    componentDidMount() {
-        const { toggleCategory, categories } = this.context;
-        const { pathname } = this.props.location;
-        let category = pathname.replace("/", "");
-        if(category === "")
-            category = "all";
-        let index = categories.findIndex(({name})=>name === category);
-        if(index < 0)
-            index = 0;
-
-        toggleCategory(index, category);
-    }
-
     render() {
         const { categories, selectedCategory, selectedCurrency, products } = this.context;
         const { history } = this.props;
