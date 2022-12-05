@@ -10,7 +10,6 @@
   <a href="#-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#%EF%B8%8F-exhibition">Exhibition</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#%EF%B8%8F-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#memo-license">License</a>
 </p>
 
@@ -31,10 +30,6 @@ The project was developed using the following technologies:
 
 - [React](https://reactjs.org)
 - [Styled Components](https://styled-components.com)
-
-## 🖌️ Layout
-
-Access link to project layout: [Figma - ScandiwebTest](https://www.figma.com/file/MSyCAqVy1UgNap0pvqH6H3/Junior-Frontend-Test-Designs-(Public)?node-id=0%3A1)
 
 ## :memo: License
 This project is under the MIT license. See [License](LICENSE) for details.
